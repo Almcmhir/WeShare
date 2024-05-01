@@ -1,0 +1,79 @@
+<!--
+  SAPPARI, ALFAISAL M.
+  BADUA, YOUSEF J.
+  
+  BSCS - 2C
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>LOGIN TO WMSU SSKP</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="signUp_wmsu.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+      <div class="LoginPage">
+
+        <div class="wmsuHeader">WMSU STUDENTS SKILL SHARING PLATFORM</div>
+        <div class="logo"><img src="wmsulogo.png"></div>
+
+            <div class="Login_container">
+              
+              <div class="form">
+
+                <form action="form_submit.inc.php" method="post" onsubmit="showConfirmation()">
+
+                  <input class = "username" type = "text" name = "Username" id = "username" placeholder="Enter Username..." required>
+                  <input class = "email" type = "email" name = "Email" id = "email" placeholder="Enter WMSU Gmail..." required>
+
+                  <input class = "pass" type = "password" name = "Password" id = "password" placeholder="Enter password..." required>
+                  <!--<input class = "pass" type = "password" name = "password" id = "password" placeholder="Confirm password..." required>-->
+                  <button onclick="togglePasswordVisibility(event)"><img src ="toggle_eye.png"></button>
+
+                  <div class="button">
+                  <input class = "submit" type = "submit" name = "submit" id = "submit" value= "Sign up">
+                  </div>
+
+                </form>
+
+                <div class="to_login">
+                  <p>already have an account? <a href = "../Login page/login_wmsu.html">Login here</a></p>
+                </div>
+                
+
+              </div>
+
+      </div> 
+    
+
+
+      <script>
+        function togglePasswordVisibility(event){
+            var passwordInput = document.getElementById("password");
+            event.preventDefault();
+            if (passwordInput.type === "password"){
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+
+     </script>
+
+     <script>
+        function showConfirmation(){
+          alert("\tYou are now SIGNED UP!\nplease proceed to login.");
+        }
+
+
+     </script>
+
+
+    </body>
+    
+</html>

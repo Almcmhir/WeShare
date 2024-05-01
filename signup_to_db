@@ -1,0 +1,49 @@
+<?php
+// Database connection parameters
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "wmsu_sssp_db_simple";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+
+    // Check if username or email already exists
+    $checkUserQuery = "SELECT * FROM User WHERE Username = '$username'";
+    $checkEmailQuery = "SELECT * FROM User WHERE Email = '$email'";
+
+    $userResult = $conn->query($checkUserQuery);
+    $emailResult = $conn->query($checkEmailQuery);
+
+    if ($userResult->num_rows > 0) {
+        echo "Username already exists. Please try again with a different username.";
+    } elseif ($emailResult->num_rows > 0) {
+        echo "Email already exists. Please try again with a different email address.";
+    } else {
+        // Prepare SQL statement
+        $sql = "INSERT INTO User (Username, Password, Email) VALUES ('$username', '$password', '$email')";
+
+        // Execute SQL statement
+        if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+}
+
+// Close connection
+$conn->close();
+?>
