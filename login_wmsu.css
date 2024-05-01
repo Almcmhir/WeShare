@@ -1,0 +1,149 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    /*background:linear-gradient(1deg, #820000 0%, #1C0000 100%);*/
+    background: linear-gradient(to bottom, #bb2525, #141e46 110%);
+
+    background-position:center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.LoginPage{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20%;
+
+    width: 100%;
+    height: 100%;
+    position: relative; 
+}
+
+
+img{
+    width: 100%; 
+    height: 80%;
+}
+
+.logo{
+    width: 10%; 
+    height: 10%; 
+    margin: 1%;
+    background: #D9D9D9;
+    position: relative;
+    box-shadow: 0px 0px 10px 3px #D9D9D9; 
+    border-radius: 200px;
+}
+
+
+.Login_container{
+    flex-wrap: wrap;
+    width: 30%;
+    height: 30%; 
+    position: relative;
+
+    background: #F0F1F1; 
+    box-shadow: 0px 0px 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+.Login_container form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form input{
+    height: 7vh;
+    width: 20vw;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #820000;
+    margin: 5%;
+
+}
+
+.form input:focus{
+    outline: none;
+}
+
+.form .email{
+    margin-top: 20%;
+}
+
+::placeholder{
+    font-size: 90%;
+}
+
+.button{
+    height: 8vh;
+    width: 70%;
+    margin: 5%;
+    position: relative;
+    background-color:#820000;
+    border: none;
+    cursor: pointer;
+}
+
+.button a{
+    font-size: 140%;
+    font-family: Inter;
+    font-weight: bold;
+    color: #D9D9D9;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+}
+
+.button:hover{
+    background: red;
+    color: red;
+}
+
+
+.forgotPass{
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.forgotPass a{
+    text-decoration: none;
+    color:#820000;
+}
+
+.createAcc{
+    margin: 8%;
+    font-size: 90%;
+    font-weight: bold;
+    
+}
+
+.createAcc a{
+    text-decoration: none;
+    color:#820000;
+}
+
+@media screen and (max-width: 758px) {
+    .wmsuHeader{
+        font-size: 100%;
+
+    }
+    .Login_container{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        height:600px;  
+        width: 100%;
+    }
+
+    .button{
+        border-radius: 5px;
+    }
+}
